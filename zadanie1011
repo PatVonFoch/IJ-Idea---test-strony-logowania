@@ -1,0 +1,100 @@
+package przyklad1;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class zadanie10 {
+
+    private WebDriver driver;
+
+    @Before
+    public void setUp() {
+
+
+        System.setProperty("webdriver.gecko.driver",
+
+                "src/test/resources/geckodriver");
+
+
+        driver = new FirefoxDriver();
+
+        // Zmaksymalizuj okno przeglądarki
+        driver.manage().window().maximize();
+        // Przejdź do Google
+        driver.get("https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html");
+    }
+    @Test
+    public void testQuestionareSearch() {
+
+        WebElement firstNameInput = driver.findElement(By.name("firstName"));
+        if (firstNameInput.isDisplayed()) {
+            firstNameInput.sendKeys("Karol");
+        }
+        //firstNameInput.clear();
+        //firstNameInput.sendKeys("Karol");
+
+        WebElement lastNameInput = driver.findElement(By.name("lastName"));
+        if (lastNameInput.isDisplayed()){
+            lastNameInput.sendKeys("Kowalski");
+        }
+        //lastNameInput.clear();
+        //lastNameInput.sendKeys("Kowalski");
+
+        WebElement genderMale = driver.findElement(By.name("gender"));
+        //(by.xpath("//*[*=
+        genderMale.click();
+
+        WebElement dob = driver.findElement(By.name("dob"));
+        if (dob.isDisplayed()) {
+            dob.sendKeys("05/22/2010");
+        }
+        //dob.clear();
+        //dob.sendKeys("05/22/2010");
+
+        WebElement address = driver.findElement(By.name("address"));
+        if (address.isDisplayed()){
+            address.sendKeys("Prosta 51");
+        }
+        //address.clear();
+        //address.sendKeys("Prosta 51");
+
+        WebElement email = driver.findElement(By.name("email"));
+
+        if (email.isDisplayed()){
+            email.sendKeys("karol.kowalski@mailinator.com");
+        }
+        //email.clear();
+        //email.sendKeys("karol.kowalski@mailinator.com");
+
+        WebElement password = driver.findElement(By.name("password"));
+        if (password.isDisplayed()){
+            password.sendKeys("Pass123");
+        }
+        //password.clear();
+        //password.sendKeys("Pass123");
+
+        WebElement company = driver.findElement(By.name("company"));
+        if (company.isDisplayed()){
+            company.sendKeys("Coders Lab");
+        }
+        //company.clear();
+        //company.sendKeys("Coders Lab");
+
+        WebElement role = driver.findElement(By.id("role"));
+        Select roleSelect = new Select(role);
+                roleSelect.selectByVisibleText("QA");
+
+        WebElement comment = driver.findElement(By.name("comment"));
+        if (comment.isDisplayed()){
+            comment.sendKeys("To jest mój pierwszy automat testowy");
+        }
+        //comment.clear();
+        //comment.sendKeys("To jest mój pierwszy automat testowy");
+        //WebElement element = driver.submit();
+    }
+}
