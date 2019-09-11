@@ -35,6 +35,9 @@ public class zadanie10 {
         if (firstNameInput.isDisplayed()) {
             firstNameInput.sendKeys("Karol");
         }
+        String firstNamelabel = driver.findElement(By.xpath("/html/body/div/div/form/div[1]/label")).getText();
+        System.out.println(firstNamelabel + ": "+ firstNameInput.getAttribute("value"));
+
         //firstNameInput.clear();
         //firstNameInput.sendKeys("Karol");
 
@@ -42,6 +45,8 @@ public class zadanie10 {
         if (lastNameInput.isDisplayed()){
             lastNameInput.sendKeys("Kowalski");
         }
+        String lastNamelabel = driver.findElement(By.xpath("/html/body/div/div/form/div[2]/label")).getText();
+        System.out.println(lastNamelabel + ": "+ lastNameInput.getAttribute("value"));
         //lastNameInput.clear();
         //lastNameInput.sendKeys("Kowalski");
 
@@ -60,6 +65,8 @@ public class zadanie10 {
         if (address.isDisplayed()){
             address.sendKeys("Prosta 51");
         }
+        String addresslabel = driver.findElement(By.xpath("/html/body/div/div/form/div[5]/label")).getText();
+        System.out.println(addresslabel + ": "+ address.getAttribute("value"));
         //address.clear();
         //address.sendKeys("Prosta 51");
 
@@ -68,6 +75,8 @@ public class zadanie10 {
         if (email.isDisplayed()){
             email.sendKeys("karol.kowalski@mailinator.com");
         }
+        String emailLabel = driver.findElement(By.xpath("/html/body/div/div/form/div[6]/label")).getText();
+        System.out.println(emailLabel + ": "+ email.getAttribute("value"));
         //email.clear();
         //email.sendKeys("karol.kowalski@mailinator.com");
 
@@ -75,6 +84,8 @@ public class zadanie10 {
         if (password.isDisplayed()){
             password.sendKeys("Pass123");
         }
+        String passLabel = driver.findElement(By.xpath("/html/body/div/div/form/div[7]/label")).getText();
+        System.out.println(passLabel + ": "+ password.getAttribute("value"));
         //password.clear();
         //password.sendKeys("Pass123");
 
@@ -82,6 +93,8 @@ public class zadanie10 {
         if (company.isDisplayed()){
             company.sendKeys("Coders Lab");
         }
+        String companyLabel = driver.findElement(By.xpath("/html/body/div/div/form/div[8]/label")).getText();
+        System.out.println(companyLabel + ": "+ company.getAttribute("value"));
         //company.clear();
         //company.sendKeys("Coders Lab");
 
@@ -93,8 +106,11 @@ public class zadanie10 {
         if (comment.isDisplayed()){
             comment.sendKeys("To jest mój pierwszy automat testowy");
         }
+        String CommentLabel = driver.findElement(By.xpath("/html/body/div/div/form/div[12]/label")).getText();
+        System.out.println(CommentLabel + ": "+ comment.getAttribute("value"));
         //comment.clear();
         //comment.sendKeys("To jest mój pierwszy automat testowy");
         //WebElement element = driver.submit();
     }
 }
+
